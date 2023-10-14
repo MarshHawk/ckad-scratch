@@ -1,0 +1,58 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2022-11-25T19:59:33Z"
+  labels:
+    app: backend
+  name: backend
+  namespace: pluton
+  resourceVersion: "60105"
+  uid: e8178d7b-8dec-4c3a-9a01-cc026d455d3c
+spec:
+  clusterIP: 10.102.154.63
+  clusterIPs:
+  - 10.102.154.63
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: backend
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2022-11-25T19:59:33Z"
+  labels:
+    app: frontend
+  name: frontend
+  namespace: pluton
+  resourceVersion: "60109"
+  uid: ba0b4d9e-5eec-44ec-871b-88a330b4df6b
+spec:
+  clusterIP: 10.101.158.33
+  clusterIPs:
+  - 10.101.158.33
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 80
+  selector:
+    app: frontend
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}

@@ -1,0 +1,16 @@
+Name:          moon-pvc-126
+Namespace:     moon
+StorageClass:  moon-retainer
+Status:        Pending
+Volume:        
+Labels:        <none>
+Annotations:   <none>
+Finalizers:    [kubernetes.io/pvc-protection]
+Capacity:      
+Access Modes:  
+VolumeMode:    Filesystem
+Used By:       <none>
+Events:
+  Type     Reason              Age   From                         Message
+  ----     ------              ----  ----                         -------
+  Warning  ProvisioningFailed  3s    persistentvolume-controller  storageclass.storage.k8s.io "moon-retainer" not found
